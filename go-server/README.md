@@ -1,5 +1,8 @@
 ## 해당 폴더는 쿠버네티스 Pod를 테스트하기 위해 만든 코드들입니다.
 
+### 2장 Pod 링크
+https://mica-pluto-49a.notion.site/2-POD-bad20c6a1d0b44f78e7fa6c52c030c1d
+
 ### 코드 설명
 
 code는 go로 구성되어 있으며 gin-gonic 프레임워크를 사용했습니다.
