@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-gin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-gin
+  template:
+    metadata:
+      labels:
+        app: go-gin
+    spec:
+      containers:
+        - name: go-gin
+          image: tae2089/gin:1.0.1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
