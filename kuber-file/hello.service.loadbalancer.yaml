@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-gin-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: go-gin
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
