@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-gin-nodeport
+  labels:
+    run: go-gin-nodeport
+spec:
+  type: NodePort # 서비스 타입
+  ports:
+    - port: 80 # 서비스 포트
+      targetPort: 8080 # 타켓, 즉 pod의 포트
+      protocol: TCP
+      name: http
+  selector:
+    app: go-gin
