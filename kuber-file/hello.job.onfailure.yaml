@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: errorjob-restartpod
+spec:
+  template:
+    spec:
+      containers:
+        - name: unexited-code
+          image: busybox
+          command: ["exit 1"]
+      restartPolicy: OnFailure
