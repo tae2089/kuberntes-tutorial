@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: errorjob-unvalidcommand-backofflimit
+spec:
+  template:
+    spec:
+      containers:
+        - name: errorjob-unvalidcommand
+          image: busybox
+          command: ["ls", "unvalid path"]
+      restartPolicy: Never
+  # job에러가 발생해도 pod는 1개만 실행
+  backoffLimit: 0
